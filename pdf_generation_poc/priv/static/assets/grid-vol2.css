@@ -1,0 +1,62 @@
+	.part2-invoice {
+			display: grid;
+			grid-template-columns: 2em 5em 1fr 33% 2em;
+			grid-template-rows: 3.5em 7.5em 5em 5em 6em;
+			grid-auto-rows: 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				". . item-category postal-charges ."
+				". . item-category submission-date ."
+				". some-code comment submission-date ."
+				". qr-code comment legal-notice ."
+				". qr-code additional-checkboxes legal-notice .";
+		}
+
+		.item-category {
+			display: grid;
+			grid-template-columns: 6fr 3fr;
+			grid-template-rows: 3.5em 3.5em 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"category-checkboxes explanation"
+				"category-checkboxes explanation"
+				"category-checkboxes .";
+			grid-area: item-category;
+		}
+
+		.weight { grid-area: weight; }
+
+		.explanation { grid-area: explanation; }
+
+		.category-checkboxes { grid-area: category-checkboxes; }
+
+		.comment { grid-area: comment; }
+
+		.additional-checkboxes {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr;
+			gap: 0em 0em;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"license certificate invoice-no";
+			grid-area: additional-checkboxes;
+		}
+
+		.license { grid-area: license; }
+
+		.part2-invoice-no { grid-area: invoice-no; }
+
+		.certificate { grid-area: certificate; }
+
+		.postal-charges { grid-area: postal-charges; }
+
+		.submission-date { grid-area: submission-date; }
+
+		.legal-notice { grid-area: legal-notice; }
+
+		.some-code { grid-area: some-code; }
+
+		.qr-code { grid-area: qr-code; }

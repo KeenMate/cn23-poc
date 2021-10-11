@@ -1,0 +1,433 @@
+.page-break-fix {
+	page-break-inside: avoid;
+}
+
+.part2-invoice {
+	border: 1px dotted;
+	border-bottom: none;
+	border-top: none;
+}
+
+.part2-invoice h3,
+.part2-invoice h4 {
+	margin: 0;
+	margin-left: .5rem;
+}
+
+.part2-invoice input,
+.part2-invoice textarea {
+	padding: 0 .5rem;
+	border: none;
+	/*background-color: #dde4ff;*/
+	resize: none;
+}
+
+.part2-invoice > * {
+	border: 1px solid;
+	margin: -.5px;
+}
+
+.part2-invoice .part2-invoice-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 .5em;
+	border: none
+}
+
+.part2-invoice .from {
+}
+
+.part2-invoice .from .from-legend {
+	border: 1px solid;
+	border-top: none;
+	border-right: none;
+	padding: .5rem;
+}
+
+.part2-invoice .from .from-initials {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .from .from-initials input {
+	flex: 1;
+}
+
+.part2-invoice .from .from-business {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .from .from-business input {
+	flex: 1;
+}
+
+.part2-invoice .from .from-street {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .from .from-street input {
+	flex: 1
+}
+
+.part2-invoice .from .from-postcode {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .from .from-postcode input {
+	flex: 1
+}
+
+.part2-invoice .from .from-city {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .from .from-city input {
+	flex: 1
+}
+
+.part2-invoice .from .from-country {
+	/* border-bottom: 1px solid; */
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .from .from-country input {
+	flex: 1;
+}
+
+.part2-invoice .from .from-phone {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: .5em;
+}
+
+.part2-invoice .from .from-phone input {
+	width: 9em;
+}
+
+.part2-invoice .from-header {
+	border-left: none;
+}
+
+.part2-invoice .to-header {
+	border-left: none;
+}
+
+.part2-invoice .to-header h4 {
+	margin: 0
+}
+
+.part2-invoice .to {
+}
+
+.part2-invoice .to .to-initials {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .to .to-initials input {
+	flex: 1;
+}
+
+.part2-invoice .to .to-business {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .to .to-business input {
+	flex: 1;
+}
+
+.part2-invoice .to .to-street {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .to .to-street input {
+	flex: 1
+}
+
+.part2-invoice .to .to-postcode {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .to .to-postcode input {
+	flex: 1
+}
+
+.part2-invoice .to .to-city {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .to .to-city input {
+	flex: 1
+}
+
+.part2-invoice .to .to-country {
+	/* border-bottom: 1px solid; */
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+
+.part2-invoice .to .to-country input {
+	flex: 1;
+}
+
+.part2-invoice .to .to-phone {
+	border-bottom: 1px solid;
+	padding: 0 .5rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: .5em;
+}
+
+.part2-invoice .to .to-phone input {
+	width: 9em;
+}
+
+
+.part2-invoice .items {
+	border: none;
+  margin-top: -0.8px;
+}
+
+.part2-invoice .items table {
+	width: 100%;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+/* .part2-invoice .items table thead tr {
+	page-break-before: auto;
+} */
+
+.part2-invoice .items table,
+.part2-invoice .items table th,
+.part2-invoice .items table td {
+	border: 1px solid;
+}
+
+.part2-invoice .items table td {
+	height: 1.6em;
+	/*background-color: #dde4ff;*/
+}
+
+.part2-invoice .items table td:nth-child(5),
+.part2-invoice .items table th:nth-child(5),
+.part2-invoice .items table thead tr:last-child th:first-child {
+	border-left-width: 2px;
+}
+
+.part2-invoice .items table thead tr:first-child th:last-child {
+	border-top-width: 2px;
+}
+
+.part2-invoice .items table td:last-child,
+.part2-invoice .items table th:last-child {
+	border-right-width: 2px;
+}
+
+.part2-invoice .items table tbody > tr:last-child > td:last-child,
+.part2-invoice .items table tbody > tr:last-child > td:nth-last-child(2) {
+	border-bottom-width: 2px;
+}
+
+.part2-invoice .importer {
+}
+
+.part2-invoice .importer .importer-vat {
+	border-bottom: 1px solid;
+}
+
+.part2-invoice .importer .importer-vat,
+.part2-invoice .importer .importer-email {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: .5rem;
+}
+
+.part2-invoice .importer input {
+	align-self: stretch;
+}
+
+.part2-invoice .barcode-place {
+	border: none;
+	padding:  1px;
+}
+
+.part2-invoice .barcode-place .top-titles {
+	display: flex;
+	padding:  0 .5em;
+}	
+
+.part2-invoice .item-category {
+	/* border-top: none; */
+}
+
+.part2-invoice .item-category .weight {
+	border-bottom: 1px solid;
+	margin-bottom: -1px;
+	display: flex;
+	padding: .5rem;
+	padding-left: 0;
+}
+
+.part2-invoice .item-category .explanation {
+	padding: .5rem;
+	padding-left: 0;
+}
+
+.part2-invoice .item-category .weight input {
+	width: 4em;
+}
+
+.part2-invoice .item-category .category-checkboxes {
+	display: flex;
+	flex-wrap: wrap;
+	gap:	.9em;
+	padding: .5rem;
+}
+
+.part2-invoice .item-category .category-checkboxes h4 {
+	width: 100%;
+	margin-left: 0;
+}
+
+.part2-invoice .item-category .category-checkboxes label {
+	width: 45%;
+	height: 2em;
+}
+
+.part2-invoice .item-category .category-checkboxes label.other-checkbox .content {
+	white-space: nowrap;
+}
+
+.part2-invoice .item-category .category-checkboxes label.other-checkbox .checkbox {
+	min-width: 2em;
+}
+
+.part2-invoice .comment {
+	padding: .5rem;
+}
+
+.part2-invoice .additional-checkboxes .custom-checkbox {
+	margin-left: -1px;
+	margin-top: -1px;
+}
+
+.part2-invoice .additional-checkboxes > * {
+	border: 1px solid;
+	margin: -1px -.5px;
+}
+
+.part2-invoice .additional-checkboxes > *:first-child {
+	margin-left: -1px;
+}
+
+.part2-invoice .additional-checkboxes > *:last-child {
+	margin-right: -1px;
+}
+
+.part2-invoice .additional-checkboxes > * > *:not(:first-child) {
+	margin-left: .2em;
+}
+
+.part2-invoice .postal-charges {
+	/* border-top: none; */
+	padding: .5rem;
+}
+
+.part2-invoice .submission-date {
+	padding: .5rem;
+}
+
+.part2-invoice .legal-notice {
+	padding: .5rem;
+}
+
+.part2-invoice .legal-notice p {
+	margin-top: 0;
+}
+
+.part2-invoice .qr-code {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	border: none;
+	margin-left: -2em;
+}
+
+.part2-invoice .qr-code span {
+	font-size: 1.2rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.part2-invoice .qr-code img {
+	border: 1px solid;
+	width: 95%;
+}
+
+/*.part2-invoice .some-code {
+	border-top: none;
+	border-left: none;
+	border-bottom: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.part2-invoice .some-code span {
+	transform: rotate(270deg);
+	transform-origin: 3.5em 0em;
+	display: block;
+	text-align: center;
+	white-space: nowrap;
+}*/

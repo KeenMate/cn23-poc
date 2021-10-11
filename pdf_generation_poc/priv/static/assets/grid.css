@@ -1,0 +1,115 @@
+		.invoice {
+			display: grid;
+			grid-template-columns: 2em 5em 1fr 33% 2em;
+			grid-template-rows: 2em 12.5em 4em 8.5em min-content;
+			grid-auto-rows: 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				". . . invoice-header invoice-header"
+				". from-header from barcode-place barcode-place"
+				". to-header to barcode-place barcode-place"
+				". to-header to importer ."
+				". . items items .";
+		}
+
+		.from-header { grid-area: from-header; }
+
+		.from {
+			display: grid;
+			grid-template-columns: 1fr 1.1fr 0.9fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"from-initials from-initials from-initials from-legend"
+				"from-business from-business from-business from-legend"
+				"from-street from-street from-phone from-phone"
+				"from-postcode from-city from-city from-city"
+				"from-country from-country from-country from-country";
+			grid-area: from;
+		}
+
+		.from-legend { grid-area: from-legend; }
+
+		.from-initials { grid-area: from-initials; }
+
+		.from-business { grid-area: from-business; }
+
+		.from-country { grid-area: from-country; }
+
+		.from-street { grid-area: from-street; }
+
+		.from-phone { grid-area: from-phone; }
+
+		.from-city { grid-area: from-city; }
+
+		.from-postcode { grid-area: from-postcode; }
+
+		.to-header { grid-area: to-header; }
+
+		.to {
+			display: grid;
+			grid-template-columns: 1fr 1.1fr 0.9fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"to-initials to-initials to-initials to-initials"
+				"to-business to-business to-business to-business"
+				"to-street to-street to-phone to-phone"
+				"to-postcode to-city to-city to-city"
+				"to-country to-country to-country to-country";
+			grid-area: to;
+		}
+
+		.to-initials { grid-area: to-initials; }
+
+		.to-business { grid-area: to-business; }
+
+		.to-street { grid-area: to-street; }
+
+		.to-phone { grid-area: to-phone; }
+
+		.to-country { grid-area: to-country; }
+
+		.to-city { grid-area: to-city; }
+
+		.to-postcode { grid-area: to-postcode; }
+
+		.importer {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"importer-vat"
+				"importer-email";
+			grid-area: importer;
+		}
+
+		.importer-vat { grid-area: importer-vat; }
+
+		.importer-email { grid-area: importer-email; }
+
+		.barcode-place {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 0.5fr 1.5fr;
+			gap: 0px 0px;
+			grid-auto-flow: row;
+			grid-template-areas:
+				"top-titles top-titles top-titles"
+				"bar-code . .";
+			grid-area: barcode-place;
+		}
+
+		.top-titles { grid-area: top-titles; }
+
+		.bar-code { grid-area: bar-code; }
+
+		.items { grid-area: items; }
+
+		.invoice-header { grid-area: invoice-header; }
+		.qr-code { grid-area: qr-code; }

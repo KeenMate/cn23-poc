@@ -1,0 +1,249 @@
+<div class="invoice">
+	<div class="invoice-header">
+		<h3>CUSTOMS DECLARATION</h3>
+		<h3 class="invoice-code">
+			CN 23
+		</h3>
+	</div>
+	<div class="from-header">
+		<h4>
+			From
+		</h4>
+	</div>
+	<div class="from">
+		<div class="from-legend">
+			Sender’s customs <br>
+			reference (if any)
+		</div>
+		<div class="from-initials">
+			<label>Name and Surname</label>
+			<input type="text" value={@invoice.from_initials} readonly>
+		</div>
+		<div class="from-business">
+			<label>Business</label>
+			<input type="text" value={@invoice.from_business} readonly>
+		</div>
+		<div class="from-postcode">
+			<label>Postcode</label>
+			<input type="text" value={@invoice.from_postcode} readonly>
+		</div>
+		<div class="from-city">
+			<label>City</label>
+			<input type="text" value={@invoice.from_city} readonly>
+		</div>
+		<div class="from-country">
+			<label>Country</label>
+			<input type="text" value={@invoice.from_country} readonly>
+		</div>
+		<div class="from-street">
+			<label>Street</label>
+			<input type="text" value={@invoice.from_street} readonly>
+		</div>
+		<div class="from-phone">
+			<label>Tel. No.</label>
+			<input type="text" value={@invoice.from_phone} readonly>
+		</div>
+	</div>
+	<div class="to-header">
+		<h4>
+			To
+		</h4>
+	</div>
+	<div class="to">
+		<div class="to-initials">
+			<label>Name and Surname</label>
+			<input type="text" value={@invoice.to_initials} readonly>
+		</div>
+		<div class="to-business">
+			<label>Business</label>
+			<input type="text" value={@invoice.to_business} readonly>
+		</div>
+		<div class="to-postcode">
+			<label>Postcode</label>
+			<input type="text" value={@invoice.to_postcode} readonly>
+		</div>
+		<div class="to-city">
+			<label>City</label>
+			<input type="text" value={@invoice.to_city} readonly>
+		</div>
+		<div class="to-country">
+			<label>Country</label>
+			<input type="text" value={@invoice.to_country} readonly>
+		</div>
+		<div class="to-street">
+			<label>Street</label>
+			<input type="text" value={@invoice.to_street} readonly>
+		</div>
+		<div class="to-phone">
+			<label>Tel. No.</label>
+			<input type="text" value={@invoice.to_phone} readonly>
+		</div>
+	</div>
+	<div class="importer">
+		<div class="importer-vat">
+			<label>
+				Importer/addressee reference (if any) (tax code/VAT No./importer code) (optional)
+			</label>
+			<input type="text" value={@invoice.importer_tax_code} readonly>
+		</div>
+		<div class="importer-email">
+			<label>
+				Importer/addressee fax/e-mail (if known)
+			</label>
+			<input type="text" value={@invoice.importer_email} readonly>
+		</div>
+	</div>
+	<div class="barcode-place">
+		<div class="top-titles">
+			<div class="item-number">
+				No. of item (barcode, if any)
+			</div>
+			<div>
+				May be opened officially
+			</div>
+			<div>
+				Important!
+				<small>See instructions on the back</small>
+			</div>
+		</div>
+
+		<div class="bar-code">
+		</div>
+	</div>
+	<div class="items">
+		<table>
+			<thead>
+				<tr>
+					<th rowspan="2">Detailed description of contents (1)</th>
+					<th rowspan="2">Quantity (2)</th>
+					<th rowspan="2">Net weight (in kg) (3)</th>
+					<th rowspan="2">Value (5)</th>
+					<th colspan="2">For commercial items only</th>
+				</tr>
+				<tr>
+					<th>HS tariff number (7)</th>
+					<th>Country of origin of goods (8)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= for r <- @items do %>
+					<tr>
+						<td><%= r.description %></td>
+						<td class="number"><%= r.quantity %></td>
+						<td class="number"><%= r.net_weight %></td>
+						<td class="number"><%= r.value %></td>
+						<td class="text-center"><%= r.hs_tarif_number %></td>
+						<td class="text-center"><%= r.country_of_origin %></td>
+					</tr>
+				<% end %>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" class="text-right"></td>
+					<td class="total-cell">
+						<span>
+							<span>Total gross weight</span>
+							<span><%= @total_gross_weight %></span>
+						</span>
+					</td>
+					<td class="total-cell">
+						<span>
+							<span>Total value</span>
+							<span><%= @total_value %></span>
+						</span>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</div>
+<div class="page-break-fix">
+	<div class="part2-invoice">
+		<div class="item-category">
+			<div class="explanation">
+				<label>Explanation</label>
+				<textarea rows="2" value={@invoice.explanation} readonly></textarea>
+			</div>
+			<div class="category-checkboxes">
+				<h4>Category of item (10)</h4>
+				<.checkbox checked={@invoice.item_category == "gift"} content="Gift" />
+				<.checkbox checked={@invoice.item_category == "returned_goods"} content="GReturned goodsift" />
+				<.checkbox checked={@invoice.item_category == "documents"} content="Documents" />
+				<.checkbox checked={@invoice.item_category == "sale_of_goods"} content="Sale of goods" />
+				<.checkbox checked={@invoice.item_category == "commercial_sample"} content="Commercial sample" />
+				<label class="custom-checkbox other-checkbox">
+					<span class="checkbox">
+						<%= if @invoice.item_category == "other" do %>
+						<.checked_icon />
+						<% end %>
+					</span>
+					<span class="content">
+						Other (please specify):
+						<input type="text" value={@invoice.custom_item_category} readonly>
+					</span>
+				</label>
+			</div>
+		</div>
+		<div class="comment">
+			<label>
+				Comments (11): (e.g.: goods subject to quarantine, sanitary/phytosanitary inspection or other restrictions)
+			</label>
+			<p></p>
+		</div>
+		<div class="additional-checkboxes">
+			<div class="license">
+				<.checkbox checked={@invoice.licence_included} content="Licence (12)" />
+
+				<small>No(s). of licence(s)</small>
+				<input type="text" value={@invoice.licence_number} readonly>
+			</div>
+			<div class="certificate">
+				<.checkbox checked={@invoice.certificate_included} content="Certificate (13)" />
+
+				<small>No(s). of certificate(s)</small>
+				<input type="text" value={@invoice.certificate_number} readonly>
+			</div>
+			<div class="invoice-no">
+				<.checkbox checked={@invoice.invoice_included} content="Invoice (14)" />
+
+				<small>No. of invoice</small>
+				<input type="text" value={@invoice.invoice_number} readonly>
+			</div>
+		</div>
+		<div class="postal-charges">
+			<label>
+				Postal charges/Fees (9)
+			</label>
+			<input type="text" value={@invoice.postal_charges} readonly>
+		</div>
+		<div class="submission-date">
+			<label>
+				Office of origin/Date of posting
+			</label>
+		</div>
+		<div class="legal-notice">
+			<p>
+				I certify that the particulars given in this customs declaration are
+				correct and that this item does not contain any dangerous article or
+				articles prohibited by legislation or by postal or customs regulations
+			</p>
+			<label>
+				Date and sender’s signature (15)
+			</label>
+		</div>
+		<%# <div class="some-code">
+			<span>
+				14-451 (05/17)
+			</span>
+		</div> %>
+		<div class="qr-code">
+			<%= case assigns[:qr_code_base64] do %>
+				<% {:ok, qr_base64} -> %>
+					<span>More details at <a href={@invoice_link}>CN23.io</a></span>
+					<img src={["data:image/svg+xml;base64,", qr_base64]} width="100%">
+
+				<% _ -> %>
+			<% end %>
+		</div>
+	</div>
+</div>
